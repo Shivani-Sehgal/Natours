@@ -1,3 +1,122 @@
 .card{
-    
+    position: relative;
+    color: black;
+    perspective: 150rem;
+    // text-align: right;
+    &__side{
+        transition: all .8s ease-in;
+        // position: absolute;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+        border-radius: 5px;
+        overflow: hidden;
+        backface-visibility: hidden;
+        height: 50rem;
+        width: 100%;
+        &--front{
+            background-color: $color-white;
+        }
+        &--back{
+            // text-align: center;
+            transform: rotateY(180deg);
+            position: absolute;
+            top:0;
+            &-1{
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+            &-2{
+                background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+            }
+            &-3{
+                background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+            }
+        }
+    }
+    &__cta{
+        position: absolute;
+        text-align: center;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+
+    }
+    &__price-box{
+        padding-bottom: 10rem;
+    }
+    &__price-value{
+        color: $color-white;
+        font-weight: 200;
+        font-size: 3.8rem;
+    }
+    &__price-only{
+        color:white;
+        text-transform: uppercase;
+    }
+    &__heading{
+        text-transform: uppercase;
+        color: $color-white;
+        font-weight: 300;
+        font-size: 2.8rem;
+        text-align: right;
+        position: absolute;
+        width: 60%;
+        top:8.5rem;
+        right:2rem;
+    }
+    &__heading-span{
+        -webkit-box-decoration-break: clone;
+        box-decoration-break: clone;
+        padding: 0.5rem 1rem;
+        // display: inline-block;
+        &--1{
+            background-image: linear-gradient(to right bottom, rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8));
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom, rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8));
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom, rgba($color-tertiary-light, 0.8), rgba($color-tertiary-dark, 0.8));
+        }
+    }
+
+    &__picture{
+        height: 40%;
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: screen;
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+        &--1{
+            background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),url(../img/nat-5.jpg);
+            
+        }
+        &--2{
+            background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),url(../img/nat-6.jpg);
+        }
+        &--3{
+            background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark),url(../img/nat-7.jpg);
+        }
+    }
+    &__details{
+        padding: 4rem;
+        ul{
+            margin: 0 auto;
+            list-style: none;
+            width:80%;
+            li{
+                margin: 0 auto;
+                padding: 1rem;
+                font-size: 1.5rem;
+                text-align: center;
+                &:not(:last-child){
+                    border-bottom: 0.5px solid #eee;
+                }
+            }
+        }
+    }
+    &:hover &__side--front{
+        transform: rotateY(-180deg);
+    }
+    &:hover &__side--back{
+        transform: rotateY(0);
+    }
 }

@@ -6,10 +6,12 @@
     border-radius: 3px;
     font-size: 1.5rem;
     transition: all .2s;
+    backface-visibility: hidden;
 
     &:hover{
         box-shadow: 0 2.5rem 5rem rgba($color-black, 0.4); 
         transform: translateY(-1.5rem) scale(1.02);
+        backface-visibility: hidden;
     }
 
     &__icon{

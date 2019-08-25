@@ -91,6 +91,7 @@ body {
   margin-top: -20vh; }
 
 .section-features {
+  backface-visibility: hidden;
   padding: 20rem 0;
   margin-top: -12vh;
   z-index: 1;
@@ -107,7 +108,8 @@ body {
 .section-tours {
   padding: 25rem 0;
   background-color: #f7f7f7;
-  margin-top: -10rem; }
+  margin-top: -10rem;
+  height: 90vh; }
 
 .btn:link, .btn:visited {
   text-transform: uppercase;
@@ -182,15 +184,107 @@ body {
   text-align: center;
   border-radius: 3px;
   font-size: 1.5rem;
-  transition: all .2s; }
+  transition: all .2s;
+  backface-visibility: hidden; }
   .feature-box:hover {
     box-shadow: 0 2.5rem 5rem rgba(0, 0, 0, 0.4);
-    transform: translateY(-1.5rem) scale(1.02); }
+    transform: translateY(-1.5rem) scale(1.02);
+    backface-visibility: hidden; }
   .feature-box__icon {
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
     color: transparent;
     font-size: 6rem; }
+
+.card {
+  position: relative;
+  color: black;
+  perspective: 150rem; }
+  .card__side {
+    transition: all .8s ease-in;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    height: 50rem;
+    width: 100%; }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg);
+      position: absolute;
+      top: 0; }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #7ed56f, #28b485); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card__cta {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%; }
+  .card__price-box {
+    padding-bottom: 10rem; }
+  .card__price-value {
+    color: #fff;
+    font-weight: 200;
+    font-size: 3.8rem; }
+  .card__price-only {
+    color: white;
+    text-transform: uppercase; }
+  .card__heading {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 300;
+    font-size: 2.8rem;
+    text-align: right;
+    position: absolute;
+    width: 60%;
+    top: 8.5rem;
+    right: 2rem; }
+  .card__heading-span {
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    padding: 0.5rem 1rem; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.8), rgba(255, 119, 48, 0.8)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.8), rgba(86, 67, 250, 0.8)); }
+  .card__picture {
+    height: 40%;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(../img/nat-5.jpg); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #7ed56f, #28b485), url(../img/nat-6.jpg); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url(../img/nat-7.jpg); }
+  .card__details {
+    padding: 4rem; }
+    .card__details ul {
+      margin: 0 auto;
+      list-style: none;
+      width: 80%; }
+      .card__details ul li {
+        margin: 0 auto;
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-align: center; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 0.5px solid #eee; }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
 
 .header {
   height: 95vh;
