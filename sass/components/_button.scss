@@ -12,6 +12,10 @@
         background-color: #fff;
         color: #777;
     }
+    &--green{
+        background-color: $color-primary;
+        color: $color-white;
+    }
     &:hover{
         transform: translateY(-3px);
         box-shadow: 0 10px 20px rgba($color-black,0.2);
