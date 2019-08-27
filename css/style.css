@@ -351,7 +351,7 @@ body {
   overflow: hidden; }
   .bg-video__content {
     height: 100%;
-    widows: 100%;
+    width: 100%;
     object-fit: cover; }
 
 .header {
